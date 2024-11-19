@@ -4787,6 +4787,12 @@ defmodule AWS.S3 do
       ]
       |> Request.build_params(input)
 
+    {custom_headers, input} =
+      [
+        {"Metadata", "x-amz-meta-"}
+      ]
+      |> Request.build_params(input)
+
     query_params = []
 
     options =
@@ -4809,7 +4815,7 @@ defmodule AWS.S3 do
 
     meta = metadata()
 
-    Request.request_rest(client, meta, :put, url_path, query_params, headers, input, options, 200)
+    Request.request_rest(client, meta, :put, url_path, query_params, custom_headers ++ headers, input, options, 200)
   end
 
   @doc """
@@ -5324,6 +5330,12 @@ defmodule AWS.S3 do
       ]
       |> Request.build_params(input)
 
+    {custom_headers, input} =
+      [
+        {"Metadata", "x-amz-meta-"}
+      ]
+      |> Request.build_params(input)
+
     query_params = []
 
     options =
@@ -5352,7 +5364,7 @@ defmodule AWS.S3 do
       :post,
       url_path,
       query_params,
-      headers,
+      custom_headers ++ headers,
       input,
       options,
       200
@@ -13299,6 +13311,12 @@ defmodule AWS.S3 do
       ]
       |> Request.build_params(input)
 
+    {custom_headers, input} =
+      [
+        {"Metadata", "x-amz-meta-"}
+      ]
+      |> Request.build_params(input)
+
     query_params = []
 
     options =
@@ -13332,7 +13350,7 @@ defmodule AWS.S3 do
 
     meta = metadata()
 
-    Request.request_rest(client, meta, :put, url_path, query_params, headers, input, options, 200)
+    Request.request_rest(client, meta, :put, url_path, query_params, custom_headers ++ headers, input, options, 200)
   end
 
   @doc """
@@ -14966,6 +14984,12 @@ defmodule AWS.S3 do
       ]
       |> Request.build_params(input)
 
+    {custom_headers, input} =
+      [
+        {"Metadata", "x-amz-meta-"}
+      ]
+      |> Request.build_params(input)
+
     query_params = []
 
     options =
@@ -14983,7 +15007,7 @@ defmodule AWS.S3 do
       :post,
       url_path,
       query_params,
-      headers,
+      custom_headers ++ headers,
       input,
       options,
       200
